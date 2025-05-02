@@ -26,6 +26,8 @@ impl TimerApp {
 
 impl eframe::App for TimerApp {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        ctx.request_repaint();
+        
         if self.first_frame {
             ctx.send_viewport_cmd(egui::ViewportCommand::OuterPosition(egui::pos2(0.0, 0.0)));
             self.first_frame = false;
